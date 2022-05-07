@@ -11,6 +11,7 @@ import { Route, Routes, useNavigate } from "react-router";
 export const App: React.FC = (): JSX.Element => {
   const [themeMode, setThemeMode] = useState<"light" | "dark">("dark");
   const [sideBarToggle, setSideBarToggle] = useState<boolean>(false);
+  const navigate = useNavigate();
 
   const theme = createTheme({
     palette: {
@@ -29,6 +30,14 @@ export const App: React.FC = (): JSX.Element => {
     setThemeMode(themeMode === "dark" ? "light" : "dark");
   }, [themeMode]);
 
+  const menuClickHandler = React.useCallback(
+    (link: any) => {
+      navigate(link);
+      setSideBarToggle(!sideBarToggle);
+    },
+    [navigate, sideBarToggle]
+  );
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -41,7 +50,7 @@ export const App: React.FC = (): JSX.Element => {
       <SideBar
         isOpen={sideBarToggle}
         handleDrawerToggle={handleDrawerToggle}
-        children={<Menu links={ROUTES} />}
+        children={<Menu links={ROUTES} menuClickHandler={menuClickHandler} />}
       />
       <Routes>
         <Route path={MAIN} element={<Dashboard />} />

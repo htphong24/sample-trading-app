@@ -9,15 +9,16 @@ import { useNavigate } from "react-router-dom";
 
 interface Props {
   links: RouteType[];
+  menuClickHandler: (link: string) => void;
 }
 
-export const Menu: React.FC<Props> = ({ links }) => {
+export const Menu: React.FC<Props> = ({ links, menuClickHandler }) => {
   const navigate = useNavigate();
   return (
     <div>
       <MenuList>
         {links.map((link) => (
-          <MenuItem key={link.path} onClick={() => navigate(link.path)}>
+          <MenuItem key={link.path} onClick={() => menuClickHandler(link.path)}>
             <ListItemIcon>{<link.icon fontSize="small" />}</ListItemIcon>
             <ListItemIcon>{link.label}</ListItemIcon>
           </MenuItem>
