@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 //import logo from './logo.svg';
 //import './App.css';
-import { createTheme, CssBaseline } from "@mui/material";
-import { ThemeProvider } from "@emotion/react";
-import { AppBarComponent, SideBar } from "./components";
+import { createTheme, CssBaseline, ThemeProvider } from "@mui/material";
+//import { ThemeProvider } from "@emotion/react";
+import { AppBarComponent, SideBar, Menu } from "./components";
+import { BLOTTER, MAIN, ROUTES, TRADETICKET } from "./routes";
 
 export const App: React.FC = (): JSX.Element => {
   const [themeMode, setThemeMode] = useState<"light" | "dark">("dark");
@@ -35,7 +36,11 @@ export const App: React.FC = (): JSX.Element => {
         isDarkMode={themeMode === "dark"}
         isDrawerOpen={sideBarToggle}
       />
-      <SideBar isOpen={sideBarToggle} handleDrawerToggle={handleDrawerToggle} />
+      <SideBar
+        isOpen={sideBarToggle}
+        handleDrawerToggle={handleDrawerToggle}
+        children={<Menu links={ROUTES} />}
+      />
     </ThemeProvider>
   );
 };

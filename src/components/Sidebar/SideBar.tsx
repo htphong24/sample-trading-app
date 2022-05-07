@@ -1,7 +1,6 @@
 import React from "react";
 import { Divider, Drawer, IconButton, Typography } from "@mui/material";
 import { styled, useTheme } from "@mui/material/styles";
-import { ThemeContext } from "@emotion/react";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
@@ -10,7 +9,7 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   alignItems: "center",
   padding: theme.spacing(0, 1),
   ...theme.mixins.toolbar,
-  justiftyContent: "flex-end",
+  justifyContent: "flex-end",
 }));
 
 const LogoStyled = styled("div")(({ theme }) => ({
@@ -18,11 +17,12 @@ const LogoStyled = styled("div")(({ theme }) => ({
   alignItems: "center",
   padding: theme.spacing(0, 1),
   ...theme.mixins.toolbar,
-  justiftyContent: "flex-start",
+  justifyContent: "flex-start",
 }));
 
 interface Props {
   isOpen: boolean;
+  children: React.ReactNode;
   handleDrawerToggle: () => void;
 }
 
@@ -30,7 +30,7 @@ const DRAWER_WIDTH = 240;
 
 export const SideBar: React.FC<Props> = ({
   isOpen,
-  //children,
+  children,
   handleDrawerToggle,
 }): JSX.Element => {
   const theme = useTheme();
@@ -63,6 +63,8 @@ export const SideBar: React.FC<Props> = ({
             )}
           </IconButton>
         </DrawerHeader>
+        <Divider />
+        {children}
       </Drawer>
     </>
   );
