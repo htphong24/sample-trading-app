@@ -3,7 +3,6 @@ import ConfirmationNumberIcon from "@mui/icons-material/ConfirmationNumber";
 import TableViewIcon from "@mui/icons-material/TableView";
 import { SvgIconTypeMap } from "@mui/material";
 import { OverridableComponent } from "@mui/material/OverridableComponent";
-import { string } from "yup";
 
 export const MAIN = "/" as const;
 export const BLOTTER = "/blotter" as const;
@@ -12,7 +11,6 @@ export const TRADETICKET = "/tradeticket" as const;
 type IconType = OverridableComponent<SvgIconTypeMap<{}, "svg">> & {
   muiName: string;
 };
-
 export type RouteType = {
   label: string;
   icon: IconType;

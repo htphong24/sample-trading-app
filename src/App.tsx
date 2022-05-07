@@ -5,6 +5,8 @@ import { createTheme, CssBaseline, ThemeProvider } from "@mui/material";
 //import { ThemeProvider } from "@emotion/react";
 import { AppBarComponent, SideBar, Menu } from "./components";
 import { BLOTTER, MAIN, ROUTES, TRADETICKET } from "./routes";
+import { Blotter, Dashboard, TradeTicket } from "./features";
+import { Route, Routes, useNavigate } from "react-router";
 
 export const App: React.FC = (): JSX.Element => {
   const [themeMode, setThemeMode] = useState<"light" | "dark">("dark");
@@ -41,6 +43,11 @@ export const App: React.FC = (): JSX.Element => {
         handleDrawerToggle={handleDrawerToggle}
         children={<Menu links={ROUTES} />}
       />
+      <Routes>
+        <Route path={MAIN} element={<Dashboard />} />
+        <Route path={BLOTTER} element={<Blotter />} />
+        <Route path={TRADETICKET} element={<TradeTicket />} />
+      </Routes>
     </ThemeProvider>
   );
 };
