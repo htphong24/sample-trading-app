@@ -1,49 +1,49 @@
-import React from "react";
-import { Divider, Drawer, IconButton, Typography } from "@mui/material";
-import { styled, useTheme } from "@mui/material/styles";
-import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import React from 'react'
+import { Divider, Drawer, IconButton, Typography } from '@mui/material'
+import { styled, useTheme } from '@mui/material/styles'
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
+import ChevronRightIcon from '@mui/icons-material/ChevronRight'
 
-const DrawerHeader = styled("div")(({ theme }) => ({
-  display: "flex",
-  alignItems: "center",
+const DrawerHeader = styled('div')(({ theme }) => ({
+  display: 'flex',
+  alignItems: 'center',
   padding: theme.spacing(0, 1),
   ...theme.mixins.toolbar,
-  justifyContent: "flex-end",
-}));
+  justifyContent: 'flex-end'
+}))
 
-const LogoStyled = styled("div")(({ theme }) => ({
-  display: "flex",
-  alignItems: "center",
+const LogoStyled = styled('div')(({ theme }) => ({
+  display: 'flex',
+  alignItems: 'center',
   padding: theme.spacing(0, 1),
   ...theme.mixins.toolbar,
-  justifyContent: "flex-start",
-}));
+  justifyContent: 'flex-start'
+}))
 
 interface Props {
-  isOpen: boolean;
-  children: React.ReactNode;
-  handleDrawerToggle: () => void;
+  isOpen: boolean
+  children: React.ReactNode
+  handleDrawerToggle: () => void
 }
 
-const DRAWER_WIDTH = 240;
+const DRAWER_WIDTH = 240
 
 export const SideBar: React.FC<Props> = ({
   isOpen,
   children,
-  handleDrawerToggle,
+  handleDrawerToggle
 }): JSX.Element => {
-  const theme = useTheme();
+  const theme = useTheme()
   return (
     <>
       <Drawer
         sx={{
           width: DRAWER_WIDTH,
           flexShrink: 0,
-          "& .MUIDrawer-paper": {
+          '& .MUIDrawer-paper': {
             width: DRAWER_WIDTH,
-            boxSizing: "border-box",
-          },
+            boxSizing: 'border-box'
+          }
         }}
         variant="persistent"
         anchor="left"
@@ -56,16 +56,19 @@ export const SideBar: React.FC<Props> = ({
             </Typography>
           </LogoStyled>
           <IconButton onClick={handleDrawerToggle}>
-            {theme.direction === "ltr" ? (
-              <ChevronLeftIcon />
-            ) : (
-              <ChevronRightIcon />
-            )}
+            {
+              // eslint-disable-next-line multiline-ternary
+              theme.direction === 'ltr' ? (
+                <ChevronLeftIcon />
+              ) : (
+                <ChevronRightIcon />
+              )
+            }
           </IconButton>
         </DrawerHeader>
         <Divider />
         {children}
       </Drawer>
     </>
-  );
-};
+  )
+}

@@ -1,0 +1,30 @@
+{
+  "trades": [
+    {
+      "bondId": 1,
+      "cleanPrice": "104",
+      "desc": "TEST BOND 1",
+      "dirtyPrice": 45,
+      "endCash": 423434.87324,
+      "endDate": 1647964879000,
+      "fixed": true,
+      "fullname": "A Counterparty Inc.",
+      "haircut": 10,
+      "isin": "US1TESTBOND2",
+      "issueCcy": "USD",
+      "qtyDirection": "positive",
+      "quantity": "840000000",
+      "repoRate": 1,
+      "repoRateType": "Fixed",
+      "repoYearBasis": "360",
+      "settlementCcy": "EUR",
+      "startCash": 71400,
+      "startDate": 1646064079000,
+      "ticketId": "dbea0eb2-2639-4375-9f83-843cc7a44f90",
+      "ticketStatus": "New",
+      "trader": "Demo",
+      "transactionType": "Reverse Repo",
+      "yieldValue": 1.5
+    }
+  ]
+}

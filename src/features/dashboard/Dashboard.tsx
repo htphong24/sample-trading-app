@@ -1,5 +1,5 @@
-import React from "react";
-import { Typography } from "@mui/material";
+import React from 'react'
+import { Typography } from '@mui/material'
 
 export const Dashboard: React.FC = (): JSX.Element => {
   return (
@@ -8,5 +8,5 @@ export const Dashboard: React.FC = (): JSX.Element => {
         Dashboard
       </Typography>
     </div>
-  );
-};
+  )
+}

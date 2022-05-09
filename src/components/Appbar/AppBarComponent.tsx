@@ -1,37 +1,37 @@
-import React from "react";
+import React from 'react'
 import {
   AppBar,
   IconButton,
   Typography,
   Toolbar,
-  Switch as ThemeSwitch,
-} from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
-import LightModeIcon from "@mui/icons-material/LightMode";
-import DarkModeIcon from "@mui/icons-material/LightMode";
+  Switch as ThemeSwitch
+} from '@mui/material'
+import MenuIcon from '@mui/icons-material/Menu'
+// import LightModeIcon from '@mui/icons-material/LightMode'
+// import DarkModeIcon from '@mui/icons-material/LightMode'
 
 interface Props {
-  handleDrawerToggle: () => void;
-  onThemeChange: () => void;
-  isDarkMode: boolean;
-  isDrawerOpen: boolean;
+  handleDrawerToggle: () => void
+  onThemeChange: () => void
+  isDarkMode: boolean
+  isDrawerOpen: boolean
 }
 
 export const AppBarComponent: React.FC<Props> = ({
   handleDrawerToggle,
   onThemeChange,
   isDarkMode,
-  isDrawerOpen,
+  isDrawerOpen
 }): JSX.Element => {
   return (
     <div>
-      <AppBar position="static" variant="elevation">
+      <AppBar position="static" variant="elevation" className="appbar-wrapper">
         <Toolbar variant="dense">
           <IconButton
             color="inherit"
             onClick={handleDrawerToggle}
             edge="start"
-            sx={{ mr: 2, ...(isDrawerOpen && { display: "none" }) }}
+            sx={{ mr: 2, ...(isDrawerOpen && { display: 'none' }) }}
           >
             <MenuIcon />
           </IconButton>
@@ -42,5 +42,5 @@ export const AppBarComponent: React.FC<Props> = ({
         </Toolbar>
       </AppBar>
     </div>
-  );
-};
+  )
+}
