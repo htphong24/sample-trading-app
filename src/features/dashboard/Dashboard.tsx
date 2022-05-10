@@ -1,12 +1,20 @@
 import React from 'react'
-import { Typography } from '@mui/material'
+import { Stack, Typography } from '@mui/material'
+import { RejectedTrades } from './components/RejectedTrades'
 
 export const Dashboard: React.FC = (): JSX.Element => {
   return (
-    <div>
-      <Typography component="div" variant="h3">
-        Dashboard
+    <Stack spacing={2} sx={{ paddingTop: 3, paddingLeft: 2 }}>
+      <Typography component="div" variant="h5">
+        Repo Dashboard
       </Typography>
-    </div>
+      <Stack direction="row" spacing={2} sx={{ padding: 2 }}>
+        <Stack direction="column" spacing={2} sx={{ width: '100%' }}></Stack>
+      </Stack>
+      <Stack direction="row" spacing={2} sx={{ paddingRight: 2 }}>
+        {/* <TopTrades /> */}
+        <RejectedTrades />
+      </Stack>
+    </Stack>
   )
 }

@@ -1,4 +1,3 @@
-import { ColDef } from 'ag-grid-community'
 import { currencyFormatter, dateFormatter } from '../../../utils'
 
 export const tradeBlotterColDef = [

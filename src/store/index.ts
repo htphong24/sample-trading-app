@@ -1,12 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit'
-import { tradesApi } from '../services/tradesApi'
+import { dashboardApi, tradesApi } from '../services'
 
 export const store = configureStore({
   reducer: {
-    [tradesApi.reducerPath]: tradesApi.reducer
+    [tradesApi.reducerPath]: tradesApi.reducer,
+    [dashboardApi.reducerPath]: dashboardApi.reducer
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(tradesApi.middleware)
+    getDefaultMiddleware().concat(tradesApi.middleware, dashboardApi.middleware)
 })
 
 export type AppDispatch = typeof store.dispatch
