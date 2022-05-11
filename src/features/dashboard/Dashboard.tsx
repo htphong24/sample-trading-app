@@ -1,5 +1,7 @@
 import React from 'react'
 import { Stack, Typography } from '@mui/material'
+import { TotalClients } from './components/TotalClients'
+import { TotalTrades } from './components/TotalTrades'
 import { TopTrades } from './components/TopTrades'
 import { RejectedTrades } from './components/RejectedTrades'
 
@@ -10,7 +12,10 @@ export const Dashboard: React.FC = (): JSX.Element => {
         Repo Dashboard
       </Typography>
       <Stack direction="row" spacing={2} sx={{ padding: 2 }}>
-        <Stack direction="column" spacing={2} sx={{ width: '100%' }}></Stack>
+        <Stack direction="column" spacing={2} sx={{ width: '100%' }}>
+          <TotalTrades />
+          <TotalClients />
+        </Stack>
       </Stack>
       <Stack direction="row" spacing={2} sx={{ paddingRight: 2 }}>
         <TopTrades />

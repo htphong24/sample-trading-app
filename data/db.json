@@ -1,4 +1,10 @@
 {
+  "totalClients": {
+    "total": 15
+  },
+  "totalTrades": {
+    "total": 90
+  },
   "topTrades": [
     {
       "tradeId": "oa4ea1eb4-5533-7825-1f83-862ce9j47f912",

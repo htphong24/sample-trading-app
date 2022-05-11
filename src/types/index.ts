@@ -68,10 +68,10 @@ export interface TradeUpdatePayload {
 }
 
 export interface TotalTradesApiResponse {
-  totalTrades: number
+  total: number
 }
 export interface TotalClientsApiResponse {
-  totalClients: number
+  total: number
 }
 export interface TopTradesObject {
   tradeId: string
