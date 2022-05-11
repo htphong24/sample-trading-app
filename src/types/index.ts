@@ -78,7 +78,9 @@ export interface TopTradesObject {
   value: number
 }
 export interface TopTradesApiResponse {
-  topTrades: TopTradesObject[]
+  tradeId: string
+  value: number
+  // topTrades: TopTradesObject[]
 }
 export interface RejectedTradesApiResponse {
   tradeId: string

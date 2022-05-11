@@ -13,7 +13,7 @@ export const dashboardApi = createApi({
     getTotalClients: builder.query<types.TotalClientsApiResponse, void>({
       query: () => 'totalClients'
     }),
-    getTopTrades: builder.query<types.TopTradesApiResponse, void>({
+    getTopTrades: builder.query<types.TopTradesApiResponse[], void>({
       query: () => 'topTrades'
     }),
     getRejectedTrades: builder.query<types.RejectedTradesApiResponse[], void>({

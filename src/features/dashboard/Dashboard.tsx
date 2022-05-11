@@ -1,5 +1,6 @@
 import React from 'react'
 import { Stack, Typography } from '@mui/material'
+import { TopTrades } from './components/TopTrades'
 import { RejectedTrades } from './components/RejectedTrades'
 
 export const Dashboard: React.FC = (): JSX.Element => {
@@ -12,7 +13,7 @@ export const Dashboard: React.FC = (): JSX.Element => {
         <Stack direction="column" spacing={2} sx={{ width: '100%' }}></Stack>
       </Stack>
       <Stack direction="row" spacing={2} sx={{ paddingRight: 2 }}>
-        {/* <TopTrades /> */}
+        <TopTrades />
         <RejectedTrades />
       </Stack>
     </Stack>

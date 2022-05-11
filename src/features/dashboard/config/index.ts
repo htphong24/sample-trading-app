@@ -20,7 +20,7 @@ export const topTradesColDef = [
     headerName: 'Amounts',
     filter: 'agNumberColumnFilter',
     valueFormatter: (params: any) => currencyFormatter.format(params.value),
-    flex: 1,
-    type: 'leftAligned'
+    flex: 1
+    // type: 'leftAligned'
   }
 ]

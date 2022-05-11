@@ -1,4 +1,14 @@
 {
+  "topTrades": [
+    {
+      "tradeId": "oa4ea1eb4-5533-7825-1f83-862ce9j47f912",
+      "value": 4569048560938
+    },
+    {
+      "tradeId": "ia4ea2eb9-4788-2373-of83-262da9j47f914",
+      "value": 34346
+    }
+  ],
   "rejectedTrades": [
     {
       "cptyName": "A Counterparty Inc",
@@ -11,14 +21,14 @@
       "cptyName": "A Counterparty Inc",
       "error": "Rejected: Market Data outdated",
       "isin": "GB1234567890",
-      "ticketId": "53656-4243",
+      "ticketId": "13556-2242",
       "ticketStatus": "Rejected"
     },
     {
       "cptyName": "B Counterparty Inc",
       "error": "Rejected: Something outdated",
       "isin": "US1TESTBOND2",
-      "ticketId": "53656-4243",
+      "ticketId": "53110-4243",
       "ticketStatus": "Rejected"
     }
   ],
