@@ -4,6 +4,7 @@ import { TotalClients } from './components/TotalClients'
 import { TotalTrades } from './components/TotalTrades'
 import { TopTrades } from './components/TopTrades'
 import { RejectedTrades } from './components/RejectedTrades'
+import { TotalEndCashChart } from './components/TotalEndCashChart'
 
 export const Dashboard: React.FC = (): JSX.Element => {
   return (
@@ -12,6 +13,7 @@ export const Dashboard: React.FC = (): JSX.Element => {
         Repo Dashboard
       </Typography>
       <Stack direction="row" spacing={2} sx={{ padding: 2 }}>
+        <TotalEndCashChart />
         <Stack direction="column" spacing={2} sx={{ width: '100%' }}>
           <TotalTrades />
           <TotalClients />
