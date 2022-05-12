@@ -1,16 +1,30 @@
 import React from 'react'
-import { Typography } from '@mui/material'
+import { Divider, Typography } from '@mui/material'
+import { styled } from '@mui/material/styles'
+import CircularProgress from '@mui/material/CircularProgress'
+import CloudOffIcon from '@mui/icons-material/CloudOff'
 import { useTicketApis } from './hooks/useTicketApis'
 
+const TicketStyledWrapper = styled('div')(({ theme }) => ({
+  display: 'flex',
+  flexDirection: 'column',
+  height: '100vh',
+  marginTop: 20,
+  padding: theme.spacing(0, 1)
+}))
+
 export const TradeTicket: React.FC = (): JSX.Element => {
-  debugger
   const { loading, error, ticketId } = useTicketApis()
 
   return (
-    <div>
-      <Typography component="div" variant="h3">
-        Trade Ticket
+    <TicketStyledWrapper>
+      <Typography component="div" variant="subtitle1">
+        Trade Details
       </Typography>
-    </div>
+      <Divider sx={{ m: 2 }} />
+      {loading && <CircularProgress color="secondary" />}
+      {error && <CloudOffIcon color="secondary" sx={{ fontSize: 50 }} />}
+      {!loading && !error && <p>{ticketId?.newId}</p>}
+    </TicketStyledWrapper>
   )
 }
