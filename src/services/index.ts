@@ -8,9 +8,4 @@ export {
   useGetTotalTradesQuery
 } from './dashboardApi'
 
-// export {
-//     ticketApi, useGetNewTicketIdQuery, useGetBondListQuery, useGetCptysQuery,
-//     useGetCurrencyListQuery,
-//     useLazyCalculateEconomicsQuery,
-//     useLazyExecuteTradeQuery
-// } from './ticketApi';
+export { ticketApi, useGetNewTicketIdQuery } from './ticketApi'
