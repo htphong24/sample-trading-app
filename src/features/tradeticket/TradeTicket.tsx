@@ -4,6 +4,7 @@ import { styled } from '@mui/material/styles'
 import CircularProgress from '@mui/material/CircularProgress'
 import CloudOffIcon from '@mui/icons-material/CloudOff'
 import { useTicketApis } from './hooks/useTicketApis'
+import { TicketSections } from './components/TicketSections'
 
 const TicketStyledWrapper = styled('div')(({ theme }) => ({
   display: 'flex',
@@ -24,7 +25,7 @@ export const TradeTicket: React.FC = (): JSX.Element => {
       <Divider sx={{ m: 2 }} />
       {loading && <CircularProgress color="secondary" />}
       {error && <CloudOffIcon color="secondary" sx={{ fontSize: 50 }} />}
-      {!loading && !error && <p>{ticketId?.newId}</p>}
+      {!loading && !error && <TicketSections ticketId={ticketId?.newId} />}
     </TicketStyledWrapper>
   )
 }
