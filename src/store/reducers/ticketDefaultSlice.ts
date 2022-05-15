@@ -22,7 +22,7 @@ export const TicketDefaultSlice = createSlice({
   name: 'TicketDefaultsReducer',
   initialState,
   reducers: {
-    updateTicketData(state, action: PayloadAction<ITicketDefaults>) {
+    updateTicketData(state, action: PayloadAction<Partial<ITicketDefaults>>) {
       return { ...state, ...action.payload }
     },
     updateTicketDates(state, action: PayloadAction<DatePayload>) {

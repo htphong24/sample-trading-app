@@ -2,6 +2,7 @@ import { Stack, TextField } from '@mui/material'
 import React from 'react'
 import { RepoFormField } from '../../../components'
 import { useAppSelector } from '../../../store/hooks'
+import { RepoTypeDropDown } from './RepoTypeDropDown'
 
 interface Props {
   ticketId: string | undefined
@@ -25,6 +26,7 @@ export const TicketSections: React.FC<Props> = ({ ticketId }): JSX.Element => {
         type="text"
         value={trader}
       />
+      <RepoTypeDropDown />
     </Stack>
   )
 }
