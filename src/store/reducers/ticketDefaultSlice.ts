@@ -36,8 +36,8 @@ export const TicketDefaultSlice = createSlice({
         duration: differenceInBusinessDays(_endDate, _startDate)
       }
     },
-    updateFixedOpen(state, action: PayloadAction<ITicketDefaults>) {
-      state.fixed = action.payload.fixed
+    updateFixedOpen(state, action: PayloadAction<Partial<ITicketDefaults>>) {
+      state.fixed = action.payload.fixed as boolean
     }
   },
   extraReducers: (builder) => {

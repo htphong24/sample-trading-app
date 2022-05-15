@@ -24,6 +24,7 @@
   "plugins": ["react", "@typescript-eslint"],
   "rules": {
     "no-shadow": "off",
+    "indent": "off",
     "@typescript-eslint/no-shadow": ["error"],
     "space-before-function-paren": ["error", "never"]
   }
