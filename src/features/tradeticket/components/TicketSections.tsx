@@ -11,6 +11,7 @@ import { BondList } from './Bond'
 import { OpenOrFixed } from './OpenOrFixed'
 import { RepoTypeDropDown } from './RepoTypeDropDown'
 import { Counterparty } from './Counterparty'
+import { Settlement } from './Settlement'
 // import { Quantity } from './Quantity'
 // import { RepoLeg } from './RepoLeg'
 
@@ -24,7 +25,8 @@ interface Props {
 export const TicketSections: React.FC<Props> = ({
   ticketId,
   bondList,
-  cptyList
+  cptyList,
+  ccyList
 }): JSX.Element => {
   const { trader } = useAppSelector((state) => state.ticketDefaultState)
   return (
@@ -47,7 +49,7 @@ export const TicketSections: React.FC<Props> = ({
       <OpenOrFixed />
       <BondList bondListData={bondList} />
       <Counterparty cptyList={cptyList} />
-      {/* <Settlement currencyList={ccyList} /> */}
+      <Settlement currencyList={ccyList} />
       {/* <Quantity /> */}
       {/* <RepoLeg /> */}
     </Stack>
