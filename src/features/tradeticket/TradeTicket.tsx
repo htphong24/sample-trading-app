@@ -15,7 +15,8 @@ const TicketStyledWrapper = styled('div')(({ theme }) => ({
 }))
 
 export const TradeTicket: React.FC = (): JSX.Element => {
-  const { loading, error, ticketId } = useTicketApis()
+  const { loading, error, ticketId, ccyList, cptyList, bondList } =
+    useTicketApis()
 
   return (
     <TicketStyledWrapper>
@@ -25,7 +26,14 @@ export const TradeTicket: React.FC = (): JSX.Element => {
       <Divider sx={{ m: 2 }} />
       {loading && <CircularProgress color="secondary" />}
       {error && <CloudOffIcon color="secondary" sx={{ fontSize: 50 }} />}
-      {!loading && !error && <TicketSections ticketId={ticketId?.newId} />}
+      {!loading && !error && (
+        <TicketSections
+          ticketId={ticketId?.newId}
+          ccyList={ccyList}
+          cptyList={cptyList}
+          bondList={bondList}
+        />
+      )}
     </TicketStyledWrapper>
   )
 }

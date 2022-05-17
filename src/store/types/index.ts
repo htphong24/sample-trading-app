@@ -1,6 +1,6 @@
 export enum TransactionTypes {
   Repo = 'Repo',
-  ReverseRepo = 'ReverseRepo'
+  ReverseRepo = 'Reverse Repo'
 }
 
 export enum TicketStatus {

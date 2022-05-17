@@ -1,5 +1,12 @@
 import { createApi } from '@reduxjs/toolkit/query/react'
-import { NewTicketIdResponse } from '../types'
+import {
+  CurrencyResponse,
+  NewTicketIdResponse,
+  BondListResponse,
+  CptyResponse,
+  CalculateEconomicsResponse,
+  TradeExecutionResponse
+} from '../types'
 import { TICKET_API } from './constants'
 import { rawBaseQuery } from './shared'
 
@@ -10,8 +17,45 @@ export const ticketApi = createApi({
     getNewTicketId: builder.query<NewTicketIdResponse, void>({
       query: () => 'trade/newid',
       keepUnusedDataFor: 0
+    }),
+    getBondList: builder.query<BondListResponse[], void>({
+      query: () => 'bondlist',
+      keepUnusedDataFor: 3600
+    }),
+    getCptys: builder.query<CptyResponse[], void>({
+      query: () => 'counterparties',
+      keepUnusedDataFor: 3600
+    }),
+    getCurrencyList: builder.query<CurrencyResponse[], void>({
+      query: () => 'ccy',
+      keepUnusedDataFor: 3600
+    }),
+    calculateEconomics: builder.query<CalculateEconomicsResponse, any>({
+      query: (trade) => ({
+        url: 'calculate',
+        method: 'POST',
+        body: trade,
+        headers: { 'Content-Type': 'application/json' }
+      }),
+      keepUnusedDataFor: 0
+    }),
+    executeTrade: builder.query<TradeExecutionResponse, any>({
+      query: (trade) => ({
+        url: 'execute',
+        method: 'POST',
+        body: trade,
+        headers: { 'Content-Type': 'application/json' }
+      }),
+      keepUnusedDataFor: 0
     })
   })
 })
 
-export const { useGetNewTicketIdQuery } = ticketApi
+export const {
+  useGetNewTicketIdQuery,
+  useGetBondListQuery,
+  useGetCptysQuery,
+  useGetCurrencyListQuery,
+  useLazyCalculateEconomicsQuery,
+  useLazyExecuteTradeQuery
+} = ticketApi

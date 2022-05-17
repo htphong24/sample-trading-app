@@ -1,5 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { dashboardApi, ticketApi, tradesApi } from '../services'
+import { selectedBondDataSlice } from './reducers/selectedBondDataSlice'
 import { TicketDefaultSlice } from './reducers/ticketDefaultSlice'
 
 export const store = configureStore({
@@ -7,7 +8,8 @@ export const store = configureStore({
     [tradesApi.reducerPath]: tradesApi.reducer,
     [dashboardApi.reducerPath]: dashboardApi.reducer,
     [ticketApi.reducerPath]: ticketApi.reducer,
-    ticketDefaultState: TicketDefaultSlice.reducer
+    ticketDefaultState: TicketDefaultSlice.reducer,
+    selectedBondDataState: selectedBondDataSlice.reducer
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(

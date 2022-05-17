@@ -1,4 +1,74 @@
 {
+  "ccy": [
+    {
+      "symbol": "$",
+      "name": "US Dollar",
+      "symbol_native": "$",
+      "decimal_digits": 2,
+      "rounding": 0,
+      "code": "USD"
+    },
+    {
+      "symbol": "£",
+      "name": "UK Pound",
+      "symbol_native": "£",
+      "decimal_digits": 2,
+      "rounding": 0,
+      "code": "GBP"
+    }
+  ],
+  "bondlist": [
+    {
+      "bondId": 1,
+      "isin": "GB1234567890",
+      "desc": "TEST BOND 1",
+      "issueCcy": "USD"
+    },
+    {
+      "bondId": 2,
+      "isin": "US1TESTBOND2",
+      "desc": "US 2",
+      "issueCcy": "USD"
+    },
+    {
+      "bondId": 3,
+      "isin": "GB1234567899",
+      "desc": "GB 3",
+      "issueCcy": "GBP"
+    },
+    {
+      "bondId": 4,
+      "isin": "US1TESTBOND4",
+      "desc": "XS 2",
+      "issueCcy": "USD"
+    }
+  ],
+  "counterparties": [
+    {
+      "counterpartyId": 1,
+      "nick": "A",
+      "cparty": "A Counterparty",
+      "fullname": "A Counterparty Inc."
+    },
+    {
+      "counterpartyId": 2,
+      "nick": "B",
+      "cparty": "B Counterparty",
+      "fullname": "B Counterparty Inc."
+    },
+    {
+      "counterpartyId": 3,
+      "nick": "C",
+      "cparty": "C Counterparty",
+      "fullname": "C Counterparty Inc."
+    },
+    {
+      "counterpartyId": 4,
+      "nick": "D",
+      "cparty": "D Counterparty",
+      "fullname": "D Counterparty Inc."
+    }
+  ],
   "cashByMonth": [
     {
       "name": "Sell Buy",
@@ -65,7 +135,7 @@
       "fixed": true,
       "fullname": "A Counterparty Inc.",
       "haircut": 10,
-      "isin": "US1TESTBOND2",
+      "isin": "US1TESTBOND3",
       "issueCcy": "USD",
       "qtyDirection": "positive",
       "quantity": "98234586",
@@ -91,7 +161,7 @@
       "fixed": true,
       "fullname": "B Counterparty Inc.",
       "haircut": 10,
-      "isin": "US1TESTBOND2",
+      "isin": "US1TESTBOND4",
       "issueCcy": "USD",
       "qtyDirection": "positive",
       "quantity": "73345",
@@ -143,7 +213,7 @@
       "fixed": true,
       "fullname": "D Counterparty Inc.",
       "haircut": 10,
-      "isin": "GB1234567890",
+      "isin": "GB1234567899",
       "issueCcy": "USD",
       "qtyDirection": "positive",
       "quantity": "2224",
