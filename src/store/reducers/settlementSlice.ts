@@ -23,7 +23,7 @@ export interface ISettlement {
 }
 
 let initialState: ISettlement = {
-  quantity: NaN,
+  quantity: 0,
   settlementCcy: '',
   repoYearBasis: RepoYearBasis.R360,
   repoRateType: RepoRateType.Fixed,

@@ -12,7 +12,7 @@ import { OpenOrFixed } from './OpenOrFixed'
 import { RepoTypeDropDown } from './RepoTypeDropDown'
 import { Counterparty } from './Counterparty'
 import { Settlement } from './Settlement'
-// import { Quantity } from './Quantity'
+import { Quantity } from './Quantity'
 // import { RepoLeg } from './RepoLeg'
 
 interface Props {
@@ -50,7 +50,7 @@ export const TicketSections: React.FC<Props> = ({
       <BondList bondListData={bondList} />
       <Counterparty cptyList={cptyList} />
       <Settlement currencyList={ccyList} />
-      {/* <Quantity /> */}
+      <Quantity />
       {/* <RepoLeg /> */}
     </Stack>
   )
