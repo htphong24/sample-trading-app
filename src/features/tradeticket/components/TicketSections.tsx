@@ -13,7 +13,7 @@ import { RepoTypeDropDown } from './RepoTypeDropDown'
 import { Counterparty } from './Counterparty'
 import { Settlement } from './Settlement'
 import { Quantity } from './Quantity'
-// import { RepoLeg } from './RepoLeg'
+import { RepoLeg } from './RepoLeg'
 
 interface Props {
   ticketId: string | undefined
@@ -51,7 +51,7 @@ export const TicketSections: React.FC<Props> = ({
       <Counterparty cptyList={cptyList} />
       <Settlement currencyList={ccyList} />
       <Quantity />
-      {/* <RepoLeg /> */}
+      <RepoLeg />
     </Stack>
   )
 }
