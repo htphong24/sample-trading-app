@@ -12,11 +12,10 @@ import { TransactionTypes } from '../../../store/types'
 import { repoTransactionType } from '../config'
 
 export const RepoTypeDropDown: React.FC = (): JSX.Element => {
+  const dispatch = useAppDispatch()
   const { transactionType } = useAppSelector(
     (state) => state.ticketDefaultState
   )
-  const dispatch = useAppDispatch()
-
   const handleTransactionChange = useCallback(
     (event: SelectChangeEvent<TransactionTypes>) => {
       return dispatch(

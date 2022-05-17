@@ -1,5 +1,5 @@
 import { XrangePointOptionsObject } from 'highcharts'
-// import { ICounterParty } from "../store/reducers/counterpartyDataSlice";
+import { ICounterParty } from '../store/reducers/counterPartyDataSlice'
 // import { IEconomics } from "../store/reducers/economicsSlice";
 // import { ISettlement } from "../store/reducers/settlementSlice";
 // import { ITicketDefaults } from "../store/types";

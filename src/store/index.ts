@@ -1,5 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { dashboardApi, ticketApi, tradesApi } from '../services'
+import { counterPartyDataSlice } from './reducers/counterPartyDataSlice'
 import { selectedBondDataSlice } from './reducers/selectedBondDataSlice'
 import { TicketDefaultSlice } from './reducers/ticketDefaultSlice'
 
@@ -9,7 +10,8 @@ export const store = configureStore({
     [dashboardApi.reducerPath]: dashboardApi.reducer,
     [ticketApi.reducerPath]: ticketApi.reducer,
     ticketDefaultState: TicketDefaultSlice.reducer,
-    selectedBondDataState: selectedBondDataSlice.reducer
+    selectedBondDataState: selectedBondDataSlice.reducer,
+    counterPartyState: counterPartyDataSlice.reducer
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(
