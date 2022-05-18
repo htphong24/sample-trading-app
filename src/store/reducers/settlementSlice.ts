@@ -22,7 +22,7 @@ export interface ISettlement {
   repoRate: number
 }
 
-let initialState: ISettlement = {
+const initialState: ISettlement = {
   quantity: 0,
   settlementCcy: '',
   repoYearBasis: RepoYearBasis.R360,
@@ -30,15 +30,11 @@ let initialState: ISettlement = {
   repoRate: 1.0
 }
 
-type PartialUpdate<T> = {
-  [P in keyof T]?: T[P]
-}
-
 export const settlementDataSlice = createSlice({
   name: 'SettlementReducer',
   initialState,
   reducers: {
-    updateSettlement(state, action: PayloadAction<PartialUpdate<ISettlement>>) {
+    updateSettlement(state, action: PayloadAction<Partial<ISettlement>>) {
       return { ...state, ...action.payload }
     }
   },

@@ -10,7 +10,7 @@ export interface IEconomics {
   endCash: number
 }
 
-let initialState: IEconomics = {
+const initialState: IEconomics = {
   cleanPrice: 0,
   dirtyPrice: 0,
   yieldValue: 0,
@@ -19,15 +19,11 @@ let initialState: IEconomics = {
   endCash: 0
 }
 
-type PartialUpdate<T> = {
-  [P in keyof T]?: T[P]
-}
-
 export const economicsDataSlice = createSlice({
   name: 'EconomicsReducer',
   initialState,
   reducers: {
-    updateEconomics(state, action: PayloadAction<PartialUpdate<IEconomics>>) {
+    updateEconomics(state, action: PayloadAction<Partial<IEconomics>>) {
       return { ...state, ...action.payload }
     }
   },
