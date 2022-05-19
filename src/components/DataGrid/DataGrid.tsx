@@ -18,7 +18,7 @@ interface DataGridProps<T> {
   colDef: ColDef[]
   rowClickHandler?: (event: RowClickedEvent) => void
 }
-// eslint-disable-next-line comma-spacing
+
 export const DataGrid = <T,>({
   showNoRowsOverlay,
   size,

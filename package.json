@@ -25,6 +25,7 @@
     "highcharts": "^10.1.0",
     "highcharts-react-official": "^3.1.0",
     "json-server": "^0.17.0",
+    "npm-run-all": "^4.1.5",
     "prettier": "^2.6.2",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
@@ -35,10 +36,14 @@
     "typescript": "^4.6.4",
     "uuid": "^8.3.2",
     "web-vitals": "^2.1.4",
+    "webpack-dev-server": "^4.9.0",
     "yup": "^0.32.11"
   },
   "scripts": {
-    "start": "set PORT=3201 && react-scripts start",
+    "start": "run-p start:dev start:api",
+    "start:dev": "set PORT=3201 && react-scripts start",
+    "prestart:api": "node data/createMockDb.js",
+    "start:api": "node data/apiServer.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
