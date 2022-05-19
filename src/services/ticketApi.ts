@@ -5,7 +5,9 @@ import {
   BondListResponse,
   CptyResponse,
   CalculateEconomicsResponse,
-  TradeExecutionResponse
+  TradeExecutionResponse,
+  CalculateEconomicsPayload,
+  TradeExecutionRequestPayload
 } from '../types'
 import { TICKET_API } from './constants'
 import { rawBaseQuery } from './shared'
@@ -30,7 +32,10 @@ export const ticketApi = createApi({
       query: () => 'ccy',
       keepUnusedDataFor: 3600
     }),
-    calculateEconomics: builder.query<CalculateEconomicsResponse, any>({
+    calculateEconomics: builder.query<
+      CalculateEconomicsResponse,
+      CalculateEconomicsPayload
+    >({
       query: (trade) => ({
         url: 'calculate',
         method: 'POST',
@@ -39,7 +44,10 @@ export const ticketApi = createApi({
       }),
       keepUnusedDataFor: 0
     }),
-    executeTrade: builder.query<TradeExecutionResponse, any>({
+    executeTrade: builder.query<
+      TradeExecutionResponse,
+      TradeExecutionRequestPayload
+    >({
       query: (trade) => ({
         url: 'execute',
         method: 'POST',

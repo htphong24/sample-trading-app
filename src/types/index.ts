@@ -1,8 +1,8 @@
 import { XrangePointOptionsObject } from 'highcharts'
 import { ICounterParty } from '../store/reducers/counterPartyDataSlice'
-// import { IEconomics } from "../store/reducers/economicsSlice";
-// import { ISettlement } from "../store/reducers/settlementSlice";
-// import { ITicketDefaults } from "../store/types";
+import { IEconomics } from '../store/reducers/economicsSlice'
+import { ISettlement } from '../store/reducers/settlementSlice'
+import { ITicketDefaults } from '../store/types'
 export interface NewTicketIdResponse {
   newId: string
 }
@@ -35,25 +35,27 @@ export interface CalculateEconomicsResponse {
   yieldValue: number
 }
 
-// type EcnomicsCalculatePayload = Pick<IEconomics, 'haircut'>
-// type BondCalculatePayload = Pick<
-//   ISettlement,
-//   'quantity' | 'repoRate' | 'repoRateType' | 'repoYearBasis'
-// >
-// type TicketInfoCalculatePayload = Pick<
-//   ITicketDefaults,
-//   'transactionType' | 'fixed'
-// >
+type EcnomicsCalculatePayload = Pick<IEconomics, 'haircut'>
 
-// export type CalculateEconomicsPayload = EcnomicsCalculatePayload &
-//   BondCalculatePayload &
-//   BondCalculatePayload &
-//   TicketInfoCalculatePayload
+type BondCalculatePayload = Pick<
+  ISettlement,
+  'quantity' | 'repoRate' | 'repoRateType' | 'repoYearBasis'
+>
 
-// export type TradeExecutionRequestPayload = ITicketDefaults &
-//   ISettlement &
-//   Pick<ICounterParty, 'fullname'> &
-//   IEconomics & { ticketId: string | undefined }
+type TicketInfoCalculatePayload = Pick<
+  ITicketDefaults,
+  'transactionType' | 'fixed'
+>
+
+export type CalculateEconomicsPayload = EcnomicsCalculatePayload &
+  BondCalculatePayload &
+  BondCalculatePayload &
+  TicketInfoCalculatePayload
+
+export type TradeExecutionRequestPayload = ITicketDefaults &
+  ISettlement &
+  Pick<ICounterParty, 'fullname'> &
+  IEconomics & { ticketId: string | undefined }
 
 // export type ExistingDeal = TradeExecutionRequestPayload
 export interface TradeExecutionResponse {

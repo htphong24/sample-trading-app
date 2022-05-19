@@ -14,6 +14,7 @@ import { Counterparty } from './Counterparty'
 import { Settlement } from './Settlement'
 import { Quantity } from './Quantity'
 import { RepoLeg } from './RepoLeg'
+import { TicketActionBar } from './TicketActionBar'
 
 interface Props {
   ticketId: string | undefined
@@ -52,6 +53,7 @@ export const TicketSections: React.FC<Props> = ({
       <Settlement currencyList={ccyList} />
       <Quantity />
       <RepoLeg />
+      <TicketActionBar />
     </Stack>
   )
 }

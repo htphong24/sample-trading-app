@@ -3,7 +3,6 @@
     "browser": true,
     "es2021": true
   },
-  "extends": ["plugin:react/recommended", "standard"],
   "overrides": [
     {
       "files": ["*.ts", "*.tsx"],
@@ -22,10 +21,12 @@
     "sourceType": "module"
   },
   "plugins": ["react", "@typescript-eslint"],
+  "extends": ["plugin:react/recommended", "standard", "prettier"],
   "rules": {
     "no-shadow": "off",
     "indent": "off",
     "@typescript-eslint/no-shadow": ["error"],
-    "space-before-function-paren": ["error", "never"]
+    "space-before-function-paren": ["error", "never"],
+    "comma-dangle": 1
   }
 }

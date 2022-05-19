@@ -8,7 +8,7 @@ export interface ICounterParty {
   counterpartyId: number | string
 }
 
-let initialState: ICounterParty = {
+const initialState: ICounterParty = {
   nick: '',
   cparty: '',
   fullname: '',

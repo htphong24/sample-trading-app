@@ -7,7 +7,7 @@ export interface IBondData {
   issueCcy: string
 }
 
-let initialState: IBondData = {
+const initialState: IBondData = {
   isin: '',
   desc: '',
   issueCcy: ''
