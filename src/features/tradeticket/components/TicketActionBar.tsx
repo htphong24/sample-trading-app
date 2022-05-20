@@ -14,6 +14,8 @@ import {
   ValidationType
 } from '../hooks/usePayloadValidation'
 import { updateEconomics } from '../../../store/reducers/economicsSlice'
+import { BLOTTER } from '../../../routes'
+import { purgeAction } from '../../../store/actions'
 
 export const TicketActionBar = () => {
   const navigate = useNavigate()
@@ -87,11 +89,54 @@ export const TicketActionBar = () => {
     ]
   )
 
-  const onExecute = useCallback(async (e: React.MouseEvent) => {}, [])
+  const onExecute = useCallback(
+    async (e: React.MouseEvent) => {
+      const payload = {
+        ...economicsState,
+        ...ticketDefaultState,
+        ...settlementState,
+        ...selectedBondDataState,
+        fullname: counterPartyState.fullname,
+        ticketId: ticketId?.newId
+      }
+
+      const validation = await validatePayload(
+        payload,
+        ValidationType.CalculationRequestPayload
+      )
+
+      if (validation.error) {
+        // TODO: show a popup/modal
+        console.log(validation.error)
+      }
+
+      if (validation.valid) executeTradeTrigger(payload)
+    },
+    [
+      executeTradeTrigger,
+      counterPartyState.fullname,
+      economicsState,
+      selectedBondDataState,
+      settlementState,
+      ticketDefaultState,
+      ticketId?.newId
+    ]
+  )
 
   useEffect(() => {
     dispatch(updateEconomics({ ...calculateResult.data }))
   }, [calculateResult, dispatch])
+
+  useEffect(() => {
+    console.log(executeResult.data)
+    if (executeResult.data?.status === 'success') {
+      setTimeout(() => {
+        navigate(BLOTTER)
+        dispatch(purgeAction())
+        // TODO: show a popup / modal for trade confirmation
+      }, 3000)
+    }
+  })
 
   return (
     <Stack

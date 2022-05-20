@@ -1,5 +1,8 @@
 // import React from 'react'
-import { calculationPayloadSchemaValidation } from '../schema'
+import {
+  calculationPayloadSchemaValidation,
+  executePayloadSchemaValidation
+} from '../schema'
 
 export enum ValidationType {
   CalculationRequestPayload = 'calcPayload',
@@ -32,6 +35,11 @@ export const usePayloadValidation = <T>(): ReturnProps<T> => {
         case ValidationType.CalculationRequestPayload:
           valid = Boolean(
             await calculationPayloadSchemaValidation.validate(payload)
+          )
+          break
+        case ValidationType.ExecutionRequestPayload:
+          valid = Boolean(
+            await executePayloadSchemaValidation.validate(payload)
           )
           break
         default:
